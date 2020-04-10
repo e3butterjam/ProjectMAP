@@ -60,3 +60,39 @@ class MyAppState extends State<MyApp> {
     );
   }
 }
+class MYsplash extends StatefulWidget {
+  @override
+  _State createState() => _State();
+}
+
+class _State extends State<MYsplash> {
+
+  @override
+  void initState() {
+    
+    super.initState();
+    Future.delayed
+    (Duration(seconds: 3),
+    (){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),
+      ),
+      );
+    }
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+     backgroundColor: Colors.grey,
+      body: new Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
+          new Image(
+            image: new AssetImage("assets/logo.png"),
+            fit: BoxFit.cover,
+          )
+        ],
+      ),
+    );
+}
+}
